@@ -43,3 +43,5 @@ terraform.rc
 */.terraformrc
 */terraform.rc
 
+**/modules/*
+*/modules/*

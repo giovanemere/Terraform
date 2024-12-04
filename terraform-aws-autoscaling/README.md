@@ -7,7 +7,7 @@ url: https://aws.amazon.com/cli/
 aws configure
 ```
 
-| col1                          | col2              |
+| Name                          | Description              |
 | ------------------------------- | ------------------- | 
 | AWS Access Key ID [None]:     | AKIATNVXXXXXXXXXX | 
 | AWS Secret Access Key [None]: | Xl7MVAn6a5UMKuZcTl1LX  |
