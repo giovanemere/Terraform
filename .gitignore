@@ -1,7 +1,9 @@
 # Talleres
 */.gitignore
-*/.terraform*
-*/terraform.tfstate*
+*/.terraform/*
+*/.terraform/.terraform.lock.hcl
+*/terraform.tfstate
+*/terraform.tfstate.backup
 */terraform.tfvars
 */sophos
 */modules
