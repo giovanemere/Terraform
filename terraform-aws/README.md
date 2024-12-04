@@ -14,9 +14,10 @@ Default output format [None]: json
 ```
 aws s3 ls 
 ```
-
 # Estructura Proyecto
+
 Para terraform su estructur basica archivos es la siguiente
+
 cree los siguientes archivos en la carpeta del proyecto
 
 ```
@@ -25,35 +26,32 @@ touch outputs.tf
 touch README.md
 touch terraform.tfvars
 touch variables.tf
+```
 
+# import modules
 
-# recurso compartido de state en bucket s3
+| module | url terraform                                                                            | url code                                                                   |
+| ------ | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| vpc    | [terraform vpc](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest) | [Source Code](https://github.com/terraform-aws-modules/terraform-aws-rds.git) |
+| aim    | [terraform iam](https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/latest) | [Source Code](https://github.com/terraform-aws-modules/terraform-aws-iam.git) |
+| rds    | [terraform]([https://registry.terraform.io/modules/terraform-aws-modules/rds/aws/latest])   | [Source Code](https://github.com/terraform-aws-modules/terraform-aws-rds.git) |
+
+# Pasos de importación de modulos
+
+1. Descarga el source del módulo de VPC
+2. Crear aun archivo .tf y agrega el modulo referenciando la ruta del modulo
+
+```
+module "vpc" {
+  source = "./modules/terraform-aws-vpc/"
+```
+Comandos de terraform
+
+```
 terraform validate
-terraform import aws_vpc.terraform vpc-0546f3224141adc13
-
-
-terraform validate
-terraform plan -out ec2.plan
-terraform apply
-
-terraform validate
-terraform plan -out att.plan
-terraform apply "att.plan"
-
-
-terraform plan -out ec2.plan
-terraform apply "ec2.plan"
-
-
-terraform init -upgrade
-terraform plan -out mysq.plan
-
-simpli-sdlc\devops\gft-ai-impact-docker-dev\docker-compose.yml
-
-
-# Otras formas
-terraform plan -var "aws_region=us-east-1"
-terraform plan -var-file values.tfvars
-export TF_VAR_ami=ami-0d26eb3972b7f8c96
+terraform init
+terraform plan -var-file terraform.tfvars -out sophos
+terraform apply "sophos"
+terraform destroy
 
 ```

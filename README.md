@@ -1,3 +1,18 @@
+# Road Map
+![alt text](image-4.png)
+
+# Instalar terraform
+| No | url terraform |
+| ------ | ------ |
+| 1 |[Documentación](https://developer.hashicorp.com/terraform/tutorials/docker-get-started)|
+| 2 |[What is Infrastructure as Code with Terraform?](https://developer.hashicorp.com/terraform/tutorials/docker-get-started/infrastructure-as-code)|
+| 3 |[Install terraform](https://developer.hashicorp.com/terraform/tutorials/docker-get-started/install-cli)|
+| 4 |[providers](https://registry.terraform.io/browse/providers)|
+| 5 |[Installing Chocolatey](https://chocolatey.org/install)|
+| 6 |choco install tree|
+| 7 |[Quick start tutorial](https://developer.hashicorp.com/terraform/tutorials/docker-get-started/install-cli)|
+| 8 |[providers](https://registry.terraform.io/browse/providers)|
+
 # Estructura Proyecto
 
 Para terraform su estructur basica archivos es la siguiente
@@ -12,24 +27,7 @@ touch terraform.tfvars
 touch variables.tf
 ```
 
-# import modules
-
-| module | url terraform                                                                            | url code                                                                   |
-| ------ | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| vpc    | [terraform vpc](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest) | [Source Code](https://github.com/terraform-aws-modules/terraform-aws-rds.git) |
-| aim    | [terraform iam](https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/latest) | [Source Code](https://github.com/terraform-aws-modules/terraform-aws-iam.git) |
-| rds    | [terraform]([https://registry.terraform.io/modules/terraform-aws-modules/rds/aws/latest])   | [Source Code](https://github.com/terraform-aws-modules/terraform-aws-rds.git) |
-
-# Pasos de importación de modulos
-
-1. Descarga el source del módulo de VPC
-2. Crear aun archivo .tf y agrega el modulo referenciando la ruta del modulo
-
-```
-module "vpc" {
-  source = "./modules/terraform-aws-vpc/"
-```
-Comandos de terraform
+# Comandos de terraform
 
 ```
 terraform validate
@@ -38,4 +36,8 @@ terraform plan -var-file terraform.tfvars -out sophos
 terraform apply "sophos"
 terraform destroy
 
+```
+# Limpiar proyecto
+```
+rm -rf .terraform terraform.tfstate
 ```
