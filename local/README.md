@@ -39,7 +39,6 @@ resource "docker_container" "nginx" {
   }
 }
 ```
-
 ### Comandos
 
 ```
