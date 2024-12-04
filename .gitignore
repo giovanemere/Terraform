@@ -15,6 +15,15 @@ taller2/terraform.tfvars
 taller2/sophos
 taller2/modules
 
+
+terraform-aws/.gitignore
+terraform-aws/.terraform*
+terraform-aws/terraform.tfstate
+terraform-aws/terraform.tfstate.backup
+terraform-aws/terraform.tfvars
+terraform-aws/modules
+
+
 # Docker container persistent data
 docker/data/
 docker/static/
