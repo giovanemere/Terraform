@@ -42,10 +42,10 @@ touch variables.tf
 2. Crear aun archivo .tf y agrega el modulo referenciando la ruta del modulo
 
 ```
-module "vpc" {
+module "vpc"
   source = "./modules/terraform-aws-vpc/"
 ```
-Comandos de terraform
+## Comandos de terraform
 
 ```
 terraform validate
@@ -53,5 +53,4 @@ terraform init
 terraform plan -var-file terraform.tfvars -out sophos
 terraform apply "sophos"
 terraform destroy
-
 ```

@@ -1,28 +1,10 @@
 # Talleres
-base/.gitignore
-base/.terraform/*
-base/.terraform.lock.hcl
-base/terraform.tfstate
-base/terraform.tfstate.backup
-base/terraform.tfvars
-base/sophos
-
-taller2/.gitignore
-taller2/.terraform*
-taller2/terraform.tfstate
-taller2/terraform.tfstate.backup
-taller2/terraform.tfvars
-taller2/sophos
-taller2/modules
-
-
-terraform-aws/.gitignore
-terraform-aws/.terraform*
-terraform-aws/terraform.tfstate
-terraform-aws/terraform.tfstate.backup
-terraform-aws/terraform.tfvars
-terraform-aws/modules
-
+*/.gitignore
+*/.terraform*
+*/terraform.tfstate*
+*/terraform.tfvars
+*/sophos
+*/modules
 
 # Docker container persistent data
 docker/data/
