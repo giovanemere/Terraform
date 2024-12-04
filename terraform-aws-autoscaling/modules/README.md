@@ -29,6 +29,8 @@ modules/terraform-aws-iam/
 # Pasos de importación de modulos
 
 1. Descarga el source del módulo
+modules/terraform-aws-autoscaling/
+
 2. Crear aun archivo .tf y agrega el modulo referenciando la ruta del modulo
 
 ```
@@ -59,9 +61,9 @@ network_interfaces = [
 ```
 ## Comandos de terraform
 ```
-terraform validate
 terraform init
-terraform plan -out sophos
-terraform apply "sophos"
+terraform validate
+terraform plan -out autoscaling.plan
+terraform apply "autoscaling.plan"
 terraform destroy
 ```

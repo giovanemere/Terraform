@@ -40,8 +40,8 @@ touch variables.tf
 ```
 terraform init
 terraform validate
-terraform plan -out ec2.plan
-terraform apply "att.plan"
+terraform plan -out autoscaling.plan
+terraform apply "autoscaling.plan"
 terraform destroy
 ```
 
