@@ -1,5 +1,15 @@
+variable "environment" {
+  description = "Environment (dev, staging, prod)"
+  type        = string
+  default     = "dev"
+}
+
+locals {
+  instance_type = var.environment == "prod" ? "t3.micro" : "t2.micro"
+}
+
 resource "aws_ebs_volume" "example" {
-  availability_zone = "${var.aws_region}a"
+  availability_zone = "${var.environment == "dev" ? data.aws_subnet.terraform1.availability_zone : data.aws_subnet.terraform1.availability_zone}"
   
   size = 1
   type = "gp2"
@@ -7,13 +17,15 @@ resource "aws_ebs_volume" "example" {
 }
 
 resource "aws_instance" "web" {
+  
   ami = var.linux-ami
-  availability_zone = "${var.aws_region}a"
-  instance_type = var.instancetype
+  availability_zone = "${var.environment == "dev" ? data.aws_subnet.terraform1.availability_zone : data.aws_subnet.terraform1.availability_zone}"
+  instance_type = local.instance_type
+  
   user_data = "${file("userdata.sh")}"
 
   tags = {
-    Name = "HelloWorld"
+    Name = var.tags_name == "" ? null : var.tags_name
   }
 }
 

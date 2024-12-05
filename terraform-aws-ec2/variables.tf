@@ -3,7 +3,6 @@ variable "aws_region" {
     description = "AWS Region"
 }
 
-
 variable "linux-ami" {
     type = string
     description = "AWS AMI Ubuntu"
@@ -11,9 +10,7 @@ variable "linux-ami" {
   
 }
 
-variable "instancetype" {
-    type = string
-    description = "AWS Instance type"
-    default = "t2.micro"
-  
+variable "tags_name" {
+  description = "The new keyname"
+  default = "ID_EC2_DS"
 }

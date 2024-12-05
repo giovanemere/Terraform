@@ -55,7 +55,7 @@ network_interfaces = [
   ]
 
   placement = {
-    availability_zone = "us-east-2c"
+    availability_zone = "us-east-1a"
   }
 
 ```
